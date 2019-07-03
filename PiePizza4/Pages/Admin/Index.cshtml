@@ -1,0 +1,32 @@
+﻿@page
+@model PiePizza3.Pages.Admin.IndexModel
+
+@{
+    ViewData["Title"] = "Home page";
+    //var pies = DbInitializer.GetAllPies().OrderBy(p => p.Name);
+}
+
+<div><a asp-page="./Create">Create</a> </div>
+
+ <div>
+@foreach (var pie in Model.Pie)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <img src="@pie.GetInlineImageSrc()" alt="">
+            <div class="caption">
+                <h3 class="pull-right">@pie.Price.ToString("c")</h3>
+                <h3 class="text-success">
+                    @pie.Name
+                </h3>
+                <p>@pie.ShortDescription</p>
+                <a asp-page="./Edit" asp-route-id="@pie.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@pie.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@pie.Id">Delete</a>
+            </div>
+        </div>
+    </div>
+}
+
+</div>
+

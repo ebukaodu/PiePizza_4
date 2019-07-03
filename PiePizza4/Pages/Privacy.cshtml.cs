@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace PiePizza4.Pages
+namespace PiePizza3.Pages
 {
     public class PrivacyModel : PageModel
     {
